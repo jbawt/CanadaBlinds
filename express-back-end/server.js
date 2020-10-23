@@ -28,12 +28,13 @@ const usersRoute = require ('./routes/users');
 const categoriesRoute = require ('./routes/categories');
 const productsRoute = require ('./routes/products');
 const optionsRoute = require ('./routes/options');
-
+const pricesRoute = require ('./routes/prices');
 // using routes
 App.use('/users', usersRoute(db));
 App.use('/categories', categoriesRoute(db));
 App.use('/products', productsRoute(db));
 App.use('/options', optionsRoute(db));
+App.use('/prices', pricesRoute(db));
 
 
 App.listen(PORT, () => {
