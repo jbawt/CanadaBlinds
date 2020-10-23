@@ -1,0 +1,1 @@
+INSERT INTO users (name, email, password, billing_address, shipping_address, phone) VALUES ('Alice Munroe', 'amunroe@gmail.com', 'password', '123 Good Ave', '123 Good Ave', '778-123-4567');
