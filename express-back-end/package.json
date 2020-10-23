@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "go": "nodemon server.js",
-    "dbreset": "node bin/resetdb.js"
+    "dbreset": "node db/resetdb.js"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
