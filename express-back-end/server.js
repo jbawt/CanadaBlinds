@@ -25,7 +25,7 @@ App.use(Express.static("public"));
 
 // routes
 const usersRoute = require ('./routes/users');
-const categoriesRoute = require ('./routes/cateegories');
+const categoriesRoute = require ('./routes/categories');
 
 // using routes
 App.use('/users', usersRoute(db));

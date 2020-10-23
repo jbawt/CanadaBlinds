@@ -1,2 +1,2 @@
-INSERT INTO users (name, description, thumbail) VALUES ('Metal', 'dont how categories in blinds work??', "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS-sqNvPcEg5oW5x3izjtGDtLzb7I7Fp3Mn2KTRYxv6j4z9BNMyfGPw0fA3hhfgEID5Xr9YTDU&usqp=CAc");
-INSERT INTO users (name, description, thumbail) VALUES ('Vertical', 'another category??', "https://cdn.shoplightspeed.com/shops/609202/files/16281460/7-most-popular-categories-of-blinds-and-shades-rig.jpg");
+INSERT INTO categories (name, description, thumbail) VALUES ('Metal', 'dont how categories in blinds work??', "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS-sqNvPcEg5oW5x3izjtGDtLzb7I7Fp3Mn2KTRYxv6j4z9BNMyfGPw0fA3hhfgEID5Xr9YTDU&usqp=CAc");
+INSERT INTO categories (name, description, thumbail) VALUES ('Vertical', 'another category??', "https://cdn.shoplightspeed.com/shops/609202/files/16281460/7-most-popular-categories-of-blinds-and-shades-rig.jpg");
