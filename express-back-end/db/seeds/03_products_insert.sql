@@ -1,0 +1,1 @@
+INSERT INTO products (name, description, thumbnail, image, category_id, total_product_price) VALUES ('Shade', 'this is a shady shade', 'https://cdn.shoplightspeed.com/shops/609202/files/16281460/7-most-popular-categories-of-blinds-and-shades-rig.jpg', 'https://cdn.shoplightspeed.com/shops/609202/files/16281460/7-most-popular-categories-of-blinds-and-shades-rig.jpg', 1, 118);
