@@ -1,7 +1,8 @@
 const Express = require("express");
 const App = Express();
 const BodyParser = require("body-parser");
-const PORT = 8080;
+const PORT = 3005;
+const usersRoute = require ('./routes/users')
 
 const cookieSession = require("cookie-session");
 
@@ -23,6 +24,8 @@ db.connect(() => {
 App.use(BodyParser.urlencoded({ extended: false }));
 App.use(BodyParser.json());
 App.use(Express.static("public"));
+
+App.use('/users', usersRoute(db));
 
 //home route
 App.get("/", (req, res) => {
