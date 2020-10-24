@@ -4,6 +4,7 @@ import axios from "axios";
 import Home from "./components/Home";
 import Users from "./components/User";
 import About from "./components/About";
+import "./App.css";
 
 export default function App() {
   const [state, setState] = useState({
@@ -36,35 +37,38 @@ export default function App() {
 
   return (
     <Router>
-      <div>
-        <nav>
+      <div className="nav-div">
+        <nav className="nav-bar">
+          <h1>
+            <strong>Canada Blinds</strong>
+          </h1>
           <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
+            <Link to="/">
+              <li>Home</li>
+            </Link>
+            <Link to="/about">
+              <li>About</li>
+            </Link>
+            <Link to="/users">
+              <li>Users</li>
+            </Link>
           </ul>
         </nav>
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/users">
-            <Users users={state.users} />
-          </Route>
-          <Route path="/">
-            <Home products={state.products} />
-          </Route>
-        </Switch>
       </div>
+
+      {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+      <Switch>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/users">
+          <Users users={state.users} />
+        </Route>
+        <Route path="/">
+          <Home products={state.products} />
+        </Route>
+      </Switch>
     </Router>
   );
 }

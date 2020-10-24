@@ -1,0 +1,49 @@
+header {
+  width: 90vw;
+  height: 20vh;
+  margin-top: 1.6em;
+  border-bottom: 2px solid black;
+  position: relative;
+  left: 5vw;
+}
+
+.title {
+  text-align: center;
+}
+
+.contact-title {
+  text-decoration: underline;
+  font-size: 1.5em;
+  text-align: center;
+  position: relative;
+  top: 60px;
+}
+
+header p {
+  text-align: center;
+  padding: 40px;
+}
+
+.about-info {
+  margin-top: 10vh;
+  width: 90vw;
+  padding: 2em;
+  text-align: center;
+  position: relative;
+  left: 5vw;
+  border: 2px solid black;
+  border-radius: 30px;
+  background-color: bisque;
+}
+
+.contact-info {
+  margin-top: 10vh;
+  width: 80vw;
+  padding: 1.5em;
+  text-align: center;
+  position: relative;
+  left: 10vw;
+  border: 2px solid black;
+  border-radius: 30px;
+  background-color: bisque;
+}
