@@ -1,12 +1,33 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
+import axios from 'axios';
 
 export default function App() {
+  
+  const [state, setState] = useState({
+    products: [],
+    categories: [],
+    prices: [],
+    options: []
+  });
+
+  useEffect(() => {
+    Promise.all([
+      axios.get('/api/products'),
+      axios.get('/api/categories'),
+      axios.get('/api/options'),
+      axios.get('/api/prices'),
+    ]).then((all) => {
+      setState(prev => ({...prev, products: all[0].data, categories: all[1].data, options: all[2].data, prices: all[3].data}))
+    })
+  }, [])
+  console.log(state.options)
+
   return (
     <Router>
       <div>
@@ -24,6 +45,8 @@ export default function App() {
           </ul>
         </nav>
 
+
+
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
@@ -34,16 +57,29 @@ export default function App() {
             <Users />
           </Route>
           <Route path="/">
-            <Home />
+            <Home options = {state.options}/>
           </Route>
         </Switch>
       </div>
+
     </Router>
   );
 }
 
-function Home() {
-  return <h2>Home</h2>;
+function Home({options}) {
+  // const options = props.options.map((option) => {
+  //   return 
+  //     key={option.id}
+  //     option={option.option}
+  //     price={option.price}
+  //     product_id={option.product_id}    
+  // })
+    const price = options
+    if (!options.length) {
+      return null
+    }
+    console.log(options[1].price)
+  return <h2>Home {options[1].price}</h2>;
 }
 
 function About() {
@@ -53,5 +89,6 @@ function About() {
 function Users() {
   return <h2>Users</h2>;
 }
+
 
 
