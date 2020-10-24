@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import axios from "axios";
+import Home from "./components/Home";
+import Users from "./components/User";
+import About from "./components/About";
 
 export default function App() {
   const [state, setState] = useState({
@@ -55,37 +58,13 @@ export default function App() {
             <About />
           </Route>
           <Route path="/users">
-            <Users />
+            <Users users={state.users} />
           </Route>
           <Route path="/">
-            <Home options={products[0].name} />
+            <Home products={state.products} />
           </Route>
         </Switch>
       </div>
     </Router>
   );
-}
-
-function Home() {
-  // const options = props.options.map((option) => {
-  //   return
-  //     key={option.id}
-  //     option={option.option}
-  //     price={option.price}
-  //     product_id={option.product_id}
-  // })
-  // const price = props.options;
-  // if (!options.length) {
-  //   return null;
-  // }
-  // console.log(options[1].price);
-  return <h2>Home {state.options}</h2>;
-}
-
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
 }
