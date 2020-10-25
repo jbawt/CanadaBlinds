@@ -1,23 +1,30 @@
-import React from "react";
+import React, {useState} from "react";
 import "./ProductList.css";
 
 export default function ProductList(props) {
+  const [hover, setHover] = useState(false)
+  function showProd() {
 
-
-  
+    alert('show the product');
+  }
+  console.log(props.image2)
 
   return (
-    <article className = "product">
+    <form className = "product">
       <header>
         <h4> {props.name} </h4>
-        <img src={props.image}/>
+        <img src={props.image} onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}/>
+        {hover && (
+          <img src={props.image2}/>
+      )}
       </header>
       <footer>
       <p>
         {props.description}
       </p>
-        <button type="button">Customize</button>
+        <button type="button" onClick={showProd} className="customize">Customize</button>
       </footer>
-    </article>
+    </form>
   );
 }

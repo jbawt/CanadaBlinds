@@ -11,7 +11,8 @@ export default function Home({products}) {
     return <ProductList
     key ={product.id}
     name={product.name}
-    image={product.image} 
+    image={product.image}
+    image2={product.thumbnail} 
     description={product.description}
     price={product.price}/>
   })

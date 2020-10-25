@@ -1,5 +1,5 @@
 footer {
-  position: absolute;
+  position:absolute;
   bottom: 0;
   left:   0;
   background-color: #EEE;
@@ -9,6 +9,11 @@ footer {
   width: 100%;
   opacity: 0.3;
   transition: all 0.3s;
+}
+
+header {
+  position: relative
+  
 }
 
 .product {
@@ -21,6 +26,7 @@ footer {
   margin-top: 20px;
   display: flex;
   justify-content: center;
+  cursor: pointer
 }
 
 header img {
@@ -41,5 +47,21 @@ aside.price {
   border-top-right-radius: 4px;
   border-bottom-left-radius: 20px;
   font-size: 0.8em;
+}
+
+.customize{
+  border-radius: 1rem;
+  border: 0;
+  font-size: 1.5rem;
+  height: 2rem;
+  line-height: 1.2rem;
+  margin-right: 1rem;
+  width: 8rem;
+  border-width: 2px;
+  border-style: solid;
+  border-color: blue;
+  color: white;
+  background-color: blue;
+  cursor:pointer
 }
 
