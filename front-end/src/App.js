@@ -33,7 +33,7 @@ export default function App() {
       }));
     });
   }, []);
-  console.log(state.options);
+
 
   return (
     <Router>
