@@ -1,16 +1,14 @@
 import React, {useState} from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Product from "./Products";
 import "./ProductList.css";
 
 export default function ProductList(props) {
   const [hover, setHover] = useState(false)
-  function showProd() {
-
-    alert('show the product');
-  }
-  console.log(props.image2)
 
   return (
-    <form className = "product">
+
+    <article className = "product" >
       <header>
         <h4> {props.name} </h4>
         <div onMouseEnter={() => setHover(true)}
@@ -27,8 +25,10 @@ export default function ProductList(props) {
       <p>
         {props.description}
       </p>
-        <button type="button" onClick={showProd} className="customize">Customize</button>
+      <Link to={`/products/${props.id}`}>  <button type="button" className="customize">Customize</button> </Link>
       </footer>
-    </form>
+    </article>
+
+
   );
 }

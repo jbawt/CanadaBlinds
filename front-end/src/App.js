@@ -4,6 +4,7 @@ import axios from "axios";
 import Home from "./components/Home";
 import Users from "./components/User";
 import About from "./components/About";
+import Product from "./components/Products";
 import "./App.css";
 
 export default function App() {
@@ -64,6 +65,9 @@ export default function App() {
         </Route>
         <Route path="/users">
           <Users users={state.users} />
+        </Route>
+        <Route path="/products/:id">
+          <Product />
         </Route>
         <Route path="/">
           <Home products={state.products} />
