@@ -1,6 +1,8 @@
 .container {
   width: 80vw;
-  border: 10px solid red;
+  position: relative;
+  left: 10vw;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  margin-top: 10vh;
 }

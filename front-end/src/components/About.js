@@ -4,7 +4,7 @@ import "./About.css";
 export default function About() {
   return (
     <body>
-      <header>
+      <header className="about-header">
         <h1 className="title">About</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
