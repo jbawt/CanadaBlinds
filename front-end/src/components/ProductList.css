@@ -13,14 +13,14 @@ footer {
 
 .product {
   max-width: 260px;
-  position:  relative;
-
-  border:        1px solid #ccc;
+  position: relative;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  padding:       15px;
+  padding: 15px;
   padding-bottom: 80px;
-  margin-top:    20px;
-
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 header img {
@@ -28,6 +28,8 @@ header img {
   max-height: 140px;
   margin: auto;
   display: block;
+  border:5px solid brown;
+  border-radius: 120px
 }
 
 aside.price {

@@ -12,14 +12,11 @@ export default function ProductList(props) {
         <h4> {props.name} </h4>
         <img src={props.image}/>
       </header>
+      <footer>
       <p>
         {props.description}
       </p>
-      <footer>
-        <button type="button">add to cart</button>
-        <aside className="price">
-          {props.price}
-        </aside>
+        <button type="button">Customize</button>
       </footer>
     </article>
   );

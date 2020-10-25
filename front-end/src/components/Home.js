@@ -1,5 +1,6 @@
 import React from "react";
 import ProductList from './ProductList'
+import "./Home.css"
 
 export default function Home({products}) {
   if (!products.length) {
@@ -15,9 +16,9 @@ export default function Home({products}) {
     price={product.price}/>
   })
   return (
-    <ul>
+    <section className = "container">
       {PL}
-    </ul>
+    </section>
 
     );
 }
