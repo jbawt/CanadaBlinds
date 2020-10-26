@@ -26,12 +26,15 @@ export default function Product() {
   }, []);
 
   const option = state.options.map((option) => {
-    return <ProductOptions 
-    key = {option.id}
-    option = {option.option}
-    product = {option.product_id}
-    price = {option.price}
+    let name = option.option.charAt(0).toUpperCase() + option.option.slice(1)
+    return (
+    <ProductOptions 
+      key = {option.id}
+      option = {name}
+      product = {option.product_id}
+      price = {option.price}
     />
+    )
   })
 
   const width = state.prices.map((width) => {
@@ -44,9 +47,12 @@ export default function Product() {
  
   return (
     <div>
-      <ProductDisplay product={state.product} />
-      <ProductDimensions prices={state.prices} />
-      {option}
+      {/* <ProductDisplay product={state.product} />
+      <ProductDimensions prices={state.prices} /> */}
+      <section>
+        <h1>Your Customizations</h1>
+        {option}
+      </section>
     </div>
   );
 }
