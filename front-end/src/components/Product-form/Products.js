@@ -26,10 +26,11 @@ export default function Product() {
   }, []);
 
   const option = state.options.map((option) => {
+    let name = option.option.charAt(0).toUpperCase() + name.slice(1)
     return (
       <ProductOptions
         key={option.id}
-        option={option.option}
+        option={name}
         product={option.product_id}
         price={option.price}
       />
