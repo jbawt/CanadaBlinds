@@ -24,11 +24,31 @@ export default function Product() {
       }));
     });
   }, []);
+
+  const option = state.options.map((option) => {
+    return (
+      <ProductOptions
+        key={option.id}
+        option={option.option}
+        product={option.product_id}
+        price={option.price}
+      />
+    );
+  });
+
+  const width = state.prices.map((width) => {
+    return width.width;
+  });
+
+  const height = state.prices.map((height) => {
+    return height.height;
+  });
+
   return (
     <div>
       <ProductDisplay product={state.product} />
-      {/* <ProductDimensions prices={state.prices} />
-      <ProductOptions options={state.options} /> */}
+      <ProductDimensions prices={state.prices} />
+      {option}
     </div>
   );
 }
