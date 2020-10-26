@@ -3,9 +3,9 @@
 - User can visit home-page/about/how-to/products from nav
 - User can select product and customize with provided options
 - User can add to cart
-- User can see cart and pay
-- User can see order go through
 - User can change quantity in cart
+- User can see cart and "pay"
+- User can see order go through
 
 ## Stretch
 

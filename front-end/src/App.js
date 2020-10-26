@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Users from "./components/User";
 import About from "./components/About";
 import Product from "./components/Products";
+import Guide from "./components/How-to";
 import "./App.css";
 
 export default function App() {
@@ -35,24 +36,38 @@ export default function App() {
     });
   }, []);
 
-
   return (
     <Router>
       <div className="nav-div">
+        <h1>
+          <strong>Canada Blinds</strong>
+        </h1>
         <nav className="nav-bar">
-          <h1>
-            <strong>Canada Blinds</strong>
-          </h1>
-          <ul>
+          <ul className="nav-info">
             <Link to="/">
               <li>Home</li>
+            </Link>
+            <Link to="/product">
+              <li>Products</li>
+            </Link>
+            <Link to="/guides">
+              <li>Guides</li>
             </Link>
             <Link to="/about">
               <li>About</li>
             </Link>
+          </ul>
+          <ul className="user-info">
             <Link to="/users">
-              <li>Users</li>
+              <li>
+                Account{" "}
+                <img src="https://img.icons8.com/small/10/000000/menu.png" />
+              </li>
             </Link>
+            <li>
+              Cart{" "}
+              <img src="https://img.icons8.com/emoji/10/000000/shopping-cart-emoji.png" />
+            </li>
           </ul>
         </nav>
       </div>
@@ -68,6 +83,9 @@ export default function App() {
         </Route>
         <Route path="/products/:id">
           <Product />
+        </Route>
+        <Route path="/guides">
+          <Guide />
         </Route>
         <Route path="/">
           <Home products={state.products} />

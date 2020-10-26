@@ -6,36 +6,73 @@
 
 .nav-div {
   padding: 1.2em;
-  width: 100vw;
+  width: 100%;
   height: 10vh;
   background-color: blanchedalmond;
   border-bottom: 2px solid black;
 }
 
-.nav-bar ul {
+.nav-bar {
+  width: 82vw;
+  height: 7vh;
+  position: relative;
+  left: 15%;
+  bottom: 30%;
+}
+
+.nav-bar .nav-info {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  margin-left: 2em;
   list-style: none;
 }
 
-.nav-bar ul a {
+.nav-bar .nav-info a {
   text-decoration: none;
   color: lightslategray;
 }
 
-.nav-bar ul li {
+.nav-bar .nav-info li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 1rem;
-  border: 2px solid darkgrey;
   width: 6vw;
   height: 5vh;
-  padding: 5px 10px 5px 17px;
+  margin-left: 2em;
   position: relative;
   bottom: 20px;
   border-radius: 5px;
 }
 
-.nav-bar h1 {
+.nav-bar .nav-info li:hover {
+  background-color: darkgrey;
+  color: white;
+}
+
+.nav-bar .user-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+.nav-bar .user-info a {
+  text-decoration: none;
+  color: lightslategray;
+}
+
+.nav-bar .user-info li {
+  font-size: 1rem;
+  margin-left: 2em;
+  position: relative;
+  bottom: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.nav-div h1 {
   color: burlywood;
   text-decoration: underline;
 }
