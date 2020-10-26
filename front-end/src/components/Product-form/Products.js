@@ -15,6 +15,14 @@ export default function Product() {
   });
   const [width, setWidth] = useState(24);
   const [height, setHeight] = useState(36);
+  const [optionItem, setOption] = useState({
+    cordless: false,
+    "metal-beaded-chain": false,
+    motor: false,
+    remote: false,
+    charger: false,
+    "retractable-cord": false
+  })
   const { id } = useParams();
   const url = `/api/products/${id}`;
   useEffect(() => {
@@ -28,14 +36,14 @@ export default function Product() {
     });
   }, []);
 
-  const option = state.options.map((option) => {
+  const optionlist = state.options.map((option) => {
     let name = option.option.charAt(0).toUpperCase() + option.option.slice(1);
     return (
       <ProductOptions
+        setOptions={setOption}
         key={option.id}
         option={name}
-        product={option.product_id}
-        price={option.price}
+        optionName={option.option}
       />
     );
   });
@@ -56,30 +64,51 @@ export default function Product() {
   const handleHeight = (event) => {
     event.preventDefault()
     setHeight(parseInt(event.target.value, 10))
-
   }
-
+  console.log(state.options)
   let [selectedItem] = state.prices.filter((item) => item.width === width && item.height === height)
-
+  let totalOptions = () => {
+    let optionPrice = 0;
+    if (optionItem.cordless === true) {
+      optionPrice += state.options[0].price
+    } else {
+    }
+    if (optionItem["metal-beaded-chain"] === true) {
+      optionPrice += state.options[1].price
+    } 
+    if (optionItem.motor === true) {
+      optionPrice += state.options[2].price
+    }
+    if (optionItem.remote === true) {
+      optionPrice += state.options[3].price
+    }
+    if (optionItem.charger === true) {
+      optionPrice += state.options[4].price
+    }
+    if (optionItem["retractable-cord"] === true) {
+      optionPrice += state.options[0].price
+    }
+    console.log(optionPrice)
+    return optionPrice;
+  }
   if (!selectedItem) {
     return selectedItem = null
   }
-  
 
   return (
     <div className="product-page">
       <ProductDisplay product={state.product} />
       <ProductDimensions
-        handleWidth={handleWidth} 
+        handleWidth={handleWidth}
         handleHeight={handleHeight}
-        width={widthArray} 
-        height={heightArray} 
+        width={widthArray}
+        height={heightArray}
       />
       <section className="option-container">
         <h1>Your Customizations</h1>
-        {option}
+        {optionlist}
       </section>
-      {!!selectedItem && <Price price={selectedItem.price}/>}
+      {!!selectedItem && <Price price={selectedItem.price} optionPrice={totalOptions} />}
     </div>
   );
 }

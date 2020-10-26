@@ -1,15 +1,25 @@
 import React from "react";
 import "./ProductOptions.css";
 
-export default function Product(props) {
+export default function Product({optionName, setOptions, option}) {
+
+  const ifSelected = (event) => {
+    if(event.target.value==="Yes") {
+      setOptions((prev) => ({
+        ...prev,
+        [optionName]: true,
+      }));
+    }
+  }
+
   return (
     <div className="option-selectors">
-      <label htmlFor="options">{props.option}</label>
+      <label htmlFor="options">{option}</label>
 
-      <select id="options">
+      <select id="options" onChange={(e) => ifSelected(e)}>
       <option value="">-Select-</option>
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
       </select>
     </div>
   );
