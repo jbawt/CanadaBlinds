@@ -1,7 +1,6 @@
 .product-container {
   position: relative;
   left: 2em;
-  top: 2em;
   width: 40vw;
   height: 90vh;
   display: flex;
