@@ -4,6 +4,7 @@ import axios from "axios";
 import ProductDisplay from "./ProductDisplay";
 import ProductDimensions from "./ProductDimensions";
 import ProductOptions from "./ProductOptions";
+import "./Products.css";
 
 export default function Product() {
   const [state, setState] = useState({
@@ -26,7 +27,7 @@ export default function Product() {
   }, []);
 
   const option = state.options.map((option) => {
-    let name = option.option.charAt(0).toUpperCase() + option.option.slice(1)
+    let name = option.option.charAt(0).toUpperCase() + option.option.slice(1);
     return (
       <ProductOptions
         key={option.id}
@@ -46,10 +47,10 @@ export default function Product() {
   });
 
   return (
-    <div>
+    <div className="product-page">
       <ProductDisplay product={state.product} />
       {/* <ProductDimensions prices={state.prices} /> */}
-      <section>
+      <section className="option-container">
         <h1>Your Customizations</h1>
         {option}
       </section>
