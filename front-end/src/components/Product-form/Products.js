@@ -48,7 +48,7 @@ export default function Product() {
   return (
     <div>
       <ProductDisplay product={state.product} />
-      <ProductDimensions prices={state.prices} />
+      {/* <ProductDimensions prices={state.prices} /> */}
       <section>
         <h1>Your Customizations</h1>
         {option}
