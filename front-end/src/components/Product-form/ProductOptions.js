@@ -7,6 +7,7 @@ export default function Product(props) {
       <label for="options">{props.option}</label>
 
       <select id="options">
+      <option value="s">-Select-</option>
         <option value="yes">Yes</option>
         <option value="no">No</option>
       </select>
