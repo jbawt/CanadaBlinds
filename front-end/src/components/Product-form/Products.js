@@ -48,7 +48,10 @@ export default function Product() {
     <div>
       <ProductDisplay product={state.product} />
       <ProductDimensions prices={state.prices} />
-      {option}
+      <section>
+        <h1>Your Customizations</h1>
+        {option}
+      </section>
     </div>
   );
 }
