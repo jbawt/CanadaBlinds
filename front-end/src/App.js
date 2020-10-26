@@ -4,7 +4,7 @@ import axios from "axios";
 import Home from "./components/Home";
 import Users from "./components/User";
 import About from "./components/About";
-import Product from "./components/Products";
+import Product from "./components/Product-form/Products";
 import Guide from "./components/How-to";
 import "./App.css";
 
