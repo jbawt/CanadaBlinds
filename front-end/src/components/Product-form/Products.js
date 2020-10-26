@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import ProductDisplay from "./ProductDisplay";
 import ProductDimensions from "./ProductDimensions";
 import ProductOptions from "./ProductOptions";
+import Price from "./Price";
 import "./Products.css";
 
 export default function Product() {
@@ -12,7 +13,8 @@ export default function Product() {
     prices: [],
     options: [],
   });
-
+  const [width, setWidth] = useState(24);
+  const [height, setHeight] = useState(36);
   const { id } = useParams();
   const url = `/api/products/${id}`;
   useEffect(() => {
@@ -38,22 +40,46 @@ export default function Product() {
     );
   });
 
-  const width = state.prices.map((width) => {
+  const widthArray = state.prices.map((width) => {
     return width.width;
   });
 
-  const height = state.prices.map((height) => {
+  const heightArray = state.prices.map((height) => {
     return height.height;
   });
+
+  const handleWidth = (event) => {
+    event.preventDefault()
+    setWidth(parseInt(event.target.value, 10))
+  }
+
+  const handleHeight = (event) => {
+    event.preventDefault()
+    setHeight(parseInt(event.target.value, 10))
+
+  }
+
+  let [selectedItem] = state.prices.filter((item) => item.width === width && item.height === height)
+
+  if (!selectedItem) {
+    return selectedItem = null
+  }
+  
 
   return (
     <div className="product-page">
       <ProductDisplay product={state.product} />
-      <ProductDimensions width={width} height={height} />
+      <ProductDimensions
+        handleWidth={handleWidth} 
+        handleHeight={handleHeight}
+        width={widthArray} 
+        height={heightArray} 
+      />
       <section className="option-container">
         <h1>Your Customizations</h1>
         {option}
       </section>
+      {!!selectedItem && <Price price={selectedItem.price}/>}
     </div>
   );
 }

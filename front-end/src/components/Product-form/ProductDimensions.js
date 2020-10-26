@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ProductDimensions.css";
 
 const ProductDimensions = (props) => {
+  
   const widthStart = props.width[0];
   const widthEnd = props.width[props.width.length - 1];
   const heightStart = props.height[0];
@@ -15,21 +16,21 @@ const ProductDimensions = (props) => {
     return newAr;
   };
 
-  const width = getDimensions(widthStart, widthEnd);
-  const height = getDimensions(heightStart, heightEnd);
+  const widthArray = getDimensions(widthStart, widthEnd);
+  const heightArray = getDimensions(heightStart, heightEnd);
 
   const MakeItem = function (X) {
-    return <option value={X}>{X}</option>;
+    return <option key={X} value={X}>{X}</option>;
   };
 
   return (
     <div className="dimension-container">
       <h2>Dimensions</h2>
-      <label for="width">Select Width:</label>
-      <select id="width">{width.map(MakeItem)}</select>
+      <label htmlFor="width">Select Width:</label>
+      <select onChange={props.handleWidth} id="width">{widthArray.map(MakeItem)}</select>
 
-      <label for="height">Select Height:</label>
-      <select id="height">{height.map(MakeItem)}</select>
+      <label htmlFor="height">Select Height:</label>
+      <select onChange={props.handleHeight} id="height">{heightArray.map(MakeItem)}</select>
     </div>
   );
 };

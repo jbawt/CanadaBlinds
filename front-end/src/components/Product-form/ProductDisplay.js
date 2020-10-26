@@ -1,5 +1,5 @@
 import React from "react";
-import "./product-display.css";
+import "./ProductDisplay.css";
 
 export default function ProductDisplay(props) {
   return (
