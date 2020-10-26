@@ -26,7 +26,7 @@ export default function Product() {
   }, []);
 
   const option = state.options.map((option) => {
-    let name = option.option.charAt(0).toUpperCase() + name.slice(1)
+    let name = option.option.charAt(0).toUpperCase() + option.option.slice(1)
     return (
       <ProductOptions
         key={option.id}
