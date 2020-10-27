@@ -11,28 +11,18 @@ export default function Cart(props) {
     return total;
   }
 
-  for (let cartItem of props.cart) {
-    if (props.productObj[cartItem.product_id].id === cartItem.product_id) {
-      products.push(product);
-    }
-  } 
-  
- 
-  // const match = products.map((product) => {
-  //   return (
-  //     <CartItem 
-  //       name={product.name}
-  //       description={product.description}
-  //       image={product.thumbnail}
-  //       price={product.price}
-  //     />
-  //   )
-  // })
-
+  const cartItems = props.cart.map((cartItem) => {
+    return (
+      <CartItem
+        product={props.products[cartItem.product_id]}
+        price={cartItem.price}
+      />
+    )
+  })
   return (
     <div>
-      {/* {match}
-      {price()} */}
+      {cartItems}
+      {price()}
     </div>
   );
 }

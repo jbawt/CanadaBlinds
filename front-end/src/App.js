@@ -49,7 +49,6 @@ export default function App() {
   }
 
   let productObj = toObject(state.products);
-  console.log(productObj)
 
   return (
     <Router>
