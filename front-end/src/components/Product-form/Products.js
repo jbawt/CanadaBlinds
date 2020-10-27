@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useMemo } from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState, Fragment } from "react";
+import { useParams, Redirect } from "react-router-dom";
 import axios from "axios";
 import ProductDisplay from "./ProductDisplay";
 import ProductDimensions from "./ProductDimensions";
@@ -7,12 +7,13 @@ import ProductOptions from "./ProductOptions";
 import Price from "./Price";
 import "./Products.css";
 
-export default function Product() {
+export default function Product(props) {
   const [state, setState] = useState({
     product: [],
     prices: [],
     options: [],
   });
+  const [redirect, setRedirect] = useState(false);
   const [width, setWidth] = useState(24);
   const [height, setHeight] = useState(36);
   const [optionItem, setOption] = useState({
@@ -143,26 +144,63 @@ export default function Product() {
     return (selectedItem = null);
   }
 
+  let orderItem = {
+    price: (selectedItem.price / 2) + totalOptions(),
+    product_id: selectedItem.product_id,
+    user_id: 1,
+    motor_option: optionItem.motor,
+    cordless_option: optionItem.cordless,
+    remote_option: optionItem.remote,
+    metalbeadedchain_option: optionItem["metal-beaded-chain"],
+    retractable_cord_option: optionItem["retractable-cord"],
+    width: width,
+    height: height
+  }
+
+  console.log(orderItem)
+
+  const handleSubmit = () => {
+    return axios.post(`/api/orderli`, orderItem).then((response) => {
+      axios.get(`/api/orderli`).then((res) => {
+        props.setState((prev) => {
+          return {
+          ...prev,
+          order_li: res.data
+          }
+        })
+        setRedirect(true);
+      })
+    }).catch((error) => console.log(error))
+  }
+
+
   return (
-    <div className="product-page">
-      <ProductDisplay product={state.product} />
-      <div className="product-price-container">
-        <div className="size-option-container">
-          <ProductDimensions
-            handleWidth={handleWidth}
-            handleHeight={handleHeight}
-            width={widthArray}
-            height={heightArray}
-          />
-          <section className="option-container">
-            <h1>Your Customizations</h1>
-            {optionlist}
-          </section>
+    <Fragment>
+      {redirect && <Redirect to="/products" />}
+      <div className="product-page">
+        <ProductDisplay product={state.product} />
+        <div className="product-price-container">
+          <div className="size-option-container">
+            <ProductDimensions
+              handleWidth={handleWidth}
+              handleHeight={handleHeight}
+              width={widthArray}
+              height={heightArray}
+            />
+            <section className="option-container">
+              <h1>Your Customizations</h1>
+              {optionlist}
+            </section>
+          </div>
+          {!!selectedItem && (
+            <Price
+              price={selectedItem.price}
+              optionPrice={totalOptions}
+              handleSubmit={handleSubmit}
+            />
+          )}
         </div>
-        {!!selectedItem && (
-          <Price price={selectedItem.price} optionPrice={totalOptions} />
-        )}
       </div>
-    </div>
+    </Fragment>
   );
 }

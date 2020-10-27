@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Users from "./components/User";
 import About from "./components/About";
 import Product from "./components/Product-form/Products";
+import Cart from "./components/Cart";
 import Guide from "./components/How-to";
 import "./App.css";
 
@@ -15,6 +16,7 @@ export default function App() {
     prices: [],
     options: [],
     users: [],
+    order_li: [],
   });
 
   useEffect(() => {
@@ -24,6 +26,7 @@ export default function App() {
       axios.get("/api/options"),
       axios.get("/api/prices"),
       axios.get("/api/users"),
+      axios.get("/api/orderli"),
     ]).then((all) => {
       setState((prev) => ({
         ...prev,
@@ -32,6 +35,7 @@ export default function App() {
         options: all[2].data,
         prices: all[3].data,
         users: all[4].data,
+        order_li: all[5].data
       }));
     });
   }, []);
@@ -64,10 +68,13 @@ export default function App() {
                 <img src="https://img.icons8.com/small/10/000000/menu.png" />
               </li>
             </Link>
+            <Link to="/orderli">
             <li>
               Cart{" "}
               <img src="https://img.icons8.com/emoji/10/000000/shopping-cart-emoji.png" />
+              {state["order_li"].length}
             </li>
+            </Link>
           </ul>
         </nav>
       </div>
@@ -82,10 +89,13 @@ export default function App() {
           <Users users={state.users} />
         </Route>
         <Route path="/products/:id">
-          <Product />
+          <Product setState={setState} />
         </Route>
         <Route path="/guides">
           <Guide />
+        </Route>
+        <Route path="/orderli">
+          <Cart cart={state["order_li"]} />
         </Route>
         <Route path="/">
           <Home products={state.products} />
