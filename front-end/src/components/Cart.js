@@ -12,20 +12,26 @@ export default function Cart(props) {
   }
 
   let products = [];
-  for (let product of props.products) {
-    for (let cartItem of props.cart) {
-      if (product.id === cartItem.product_id) {
-        products.push(product)
-      }
+  const matchedItem = () => {
+    let price = 0;
+    for (let product of props.products) {
+      for (let cartItem of props.cart) {
+        if (product.id === cartItem.product_id) {
+          products.push(product);
+          price = cartItem.price;
+        }
+      } return price;
     }
   }
-
-  let match = products.map((product) => {
+  matchedItem()
+ 
+  const match = products.map((product) => {
     return (
       <CartItem 
         name={product.name}
         description={product.description}
         image={product.thumbnail}
+        price={matchedItem}
       />
     )
   })
