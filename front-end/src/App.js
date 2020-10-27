@@ -95,7 +95,7 @@ export default function App() {
           <Guide />
         </Route>
         <Route path="/orderli">
-          <Cart cart={state["order_li"]} />
+          <Cart cart={state["order_li"]} products={state.products} />
         </Route>
         <Route path="/">
           <Home products={state.products} />
