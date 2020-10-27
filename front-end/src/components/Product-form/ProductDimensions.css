@@ -1,7 +1,6 @@
 .dimension-container {
   height: 30vh;
   width: 20vw;
-  margin-top: 3em;
   display: flex;
   align-items: center;
   flex-direction: column;

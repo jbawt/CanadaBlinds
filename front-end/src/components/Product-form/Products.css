@@ -10,3 +10,19 @@
   border-bottom-right-radius: 10px;
   box-shadow: 0px 5px 10px 0px lightslategray;
 }
+
+.product-price-container {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  padding-top: 1em;
+}
+
+.size-option-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}

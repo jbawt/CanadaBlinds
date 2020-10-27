@@ -21,8 +21,8 @@ export default function Product() {
     motor: false,
     remote: false,
     charger: false,
-    "retractable-cord": false
-  })
+    "retractable-cord": false,
+  });
   const { id } = useParams();
   const url = `/api/products/${id}`;
   useEffect(() => {
@@ -57,68 +57,78 @@ export default function Product() {
   });
 
   const handleWidth = (event) => {
-    event.preventDefault()
-    setWidth(parseInt(event.target.value, 10))
-  }
+    event.preventDefault();
+    setWidth(parseInt(event.target.value, 10));
+  };
   const findLow = (dimension, arr) => {
-    if(dimension < arr[0]) {
-      return arr[0]
+    if (dimension < arr[0]) {
+      return arr[0];
     }
-    for (let i=0; i< arr.length; i++) {
-      if(dimension < arr[i]) {
-        return arr[i-1]
+    for (let i = 0; i < arr.length; i++) {
+      if (dimension < arr[i]) {
+        return arr[i - 1];
       }
     }
-    return arr[arr.length-1]
-  }
+    return arr[arr.length - 1];
+  };
   const handleHeight = (event) => {
-    event.preventDefault()
-    setHeight(parseInt(event.target.value, 10))
-  }
-  console.log(state.options)
-  let [selectedItem] = state.prices.filter((item) => item.width === findLow(width,widthArray) && item.height === findLow(height,heightArray))
+    event.preventDefault();
+    setHeight(parseInt(event.target.value, 10));
+  };
+  console.log(state.options);
+  let [selectedItem] = state.prices.filter(
+    (item) =>
+      item.width === findLow(width, widthArray) &&
+      item.height === findLow(height, heightArray)
+  );
   let totalOptions = () => {
     let optionPrice = 0;
     if (optionItem.cordless === true) {
-      optionPrice += state.options[0].price
+      optionPrice += state.options[0].price;
     } else {
     }
     if (optionItem["metal-beaded-chain"] === true) {
-      optionPrice += state.options[1].price
-    } 
+      optionPrice += state.options[1].price;
+    }
     if (optionItem.motor === true) {
-      optionPrice += state.options[2].price
+      optionPrice += state.options[2].price;
     }
     if (optionItem.remote === true) {
-      optionPrice += state.options[3].price
+      optionPrice += state.options[3].price;
     }
     if (optionItem.charger === true) {
-      optionPrice += state.options[4].price
+      optionPrice += state.options[4].price;
     }
     if (optionItem["retractable-cord"] === true) {
-      optionPrice += state.options[0].price
+      optionPrice += state.options[0].price;
     }
-    console.log(optionPrice)
+    console.log(optionPrice);
     return optionPrice;
-  }
+  };
   if (!selectedItem) {
-    return selectedItem = null
+    return (selectedItem = null);
   }
 
   return (
     <div className="product-page">
       <ProductDisplay product={state.product} />
-      <ProductDimensions
-        handleWidth={handleWidth}
-        handleHeight={handleHeight}
-        width={widthArray}
-        height={heightArray}
-      />
-      <section className="option-container">
-        <h1>Your Customizations</h1>
-        {optionlist}
-      </section>
-      {!!selectedItem && <Price price={selectedItem.price} optionPrice={totalOptions} />}
+      <div className="product-price-container">
+        <div className="size-option-container">
+          <ProductDimensions
+            handleWidth={handleWidth}
+            handleHeight={handleHeight}
+            width={widthArray}
+            height={heightArray}
+          />
+          <section className="option-container">
+            <h1>Your Customizations</h1>
+            {optionlist}
+          </section>
+        </div>
+        {!!selectedItem && (
+          <Price price={selectedItem.price} optionPrice={totalOptions} />
+        )}
+      </div>
     </div>
   );
 }

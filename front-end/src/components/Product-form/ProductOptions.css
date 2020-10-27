@@ -1,8 +1,6 @@
 .option-container {
   width: 20vw;
   height: 30vh;
-  margin-right: 4em;
-  margin-top: 3em;
   padding: 1em;
   display: flex;
   flex-direction: column;

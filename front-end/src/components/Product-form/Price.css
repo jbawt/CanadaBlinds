@@ -1,0 +1,45 @@
+.price-total-container {
+  border: 2px solid black;
+  border-radius: 10px;
+  height: 40vh;
+  width: 45vw;
+  position: relative;
+  left: 2em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: burlywood;
+}
+
+.price-total-container h1 {
+  text-decoration: underline;
+}
+
+.price-info {
+  width: 20vw;
+  height: 5vh;
+  flex-grow: 0.5;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: blanchedalmond;
+}
+
+.price-info h2 {
+  position: relative;
+  top: 1.25em;
+  font-size: xx-large;
+}
+
+.price-total-container button {
+  width: 8vw;
+  height: 5vh;
+  border: 2px solid lightgray;
+  border-radius: 10px;
+}
+
+.price-info button:hover {
+  background-color: lightgrey;
+  color: white;
+}
