@@ -27,9 +27,12 @@
 }
 
 .price-info h2 {
-  position: relative;
-  top: 1.25em;
   font-size: xx-large;
+}
+
+.price-info h2,
+.price-info h4 {
+  margin-top: 0.5em;
 }
 
 .price-total-container button {
@@ -42,4 +45,9 @@
 .price-info button:hover {
   background-color: lightgrey;
   color: white;
+}
+
+.price-info span {
+  color: red;
+  text-decoration: line-through;
 }
