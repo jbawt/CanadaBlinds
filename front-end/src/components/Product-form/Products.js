@@ -60,13 +60,23 @@ export default function Product() {
     event.preventDefault()
     setWidth(parseInt(event.target.value, 10))
   }
-
+  const findLow = (dimension, arr) => {
+    if(dimension < arr[0]) {
+      return arr[0]
+    }
+    for (let i=0; i< arr.length; i++) {
+      if(dimension < arr[i]) {
+        return arr[i-1]
+      }
+    }
+    return arr[arr.length-1]
+  }
   const handleHeight = (event) => {
     event.preventDefault()
     setHeight(parseInt(event.target.value, 10))
   }
   console.log(state.options)
-  let [selectedItem] = state.prices.filter((item) => item.width === width && item.height === height)
+  let [selectedItem] = state.prices.filter((item) => item.width === findLow(width,widthArray) && item.height === findLow(height,heightArray))
   let totalOptions = () => {
     let optionPrice = 0;
     if (optionItem.cordless === true) {
