@@ -1,14 +1,22 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 export default function Cart(props) {
-  console.log(props)
+  console.log(props);
   return (
-    <h2>
-      {props.product.name} {props.price} {props.motor} {props.height}
-      {props.motor && <h2>motor yes</h2>}
-      {!props.cordless && <h2>cordless no</h2>}
-      {props.redtractableCord && <h2>rcm no</h2>}
-      </h2>
-
-    )
+    <Fragment>
+      <tr>
+        <td>{props.product.name}</td>
+        <td>{props.width}</td>
+        <td>{props.height}</td>
+        <td>
+          {props.motor && <p>Motor</p>} {props.cordless && <p>Cordless</p>}{" "}
+          {props.remote && <p>Remote</p>}{" "}
+          {props.metalBeadedChain && <p>Metal Beaded Chain</p>}{" "}
+          {props.retractableCord && <p>Retractable Cord</p>}{" "}
+          {props.charger && <p>Charger</p>}
+        </td>
+        <td>${props.price}</td>
+      </tr>
+    </Fragment>
+  );
 }

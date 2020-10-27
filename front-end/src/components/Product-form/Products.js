@@ -145,7 +145,7 @@ export default function Product(props) {
   }
 
   let orderItem = {
-    price: (selectedItem.price / 2) + totalOptions(),
+    price: selectedItem.price / 2 + totalOptions(),
     product_id: selectedItem.product_id,
     user_id: 1,
     motor_option: optionItem.motor,
@@ -153,25 +153,27 @@ export default function Product(props) {
     remote_option: optionItem.remote,
     metalbeadedchain_option: optionItem["metal-beaded-chain"],
     retractable_cord_option: optionItem["retractable-cord"],
+    charger: optionItem.charger,
     width: width,
-    height: height
-  }
-
+    height: height,
+  };
 
   const handleSubmit = () => {
-    return axios.post(`/api/orderli`, orderItem).then((response) => {
-      axios.get(`/api/orderli`).then((res) => {
-        props.setState((prev) => {
-          return {
-          ...prev,
-          order_li: res.data
-          }
-        })
-        setRedirect(true);
+    return axios
+      .post(`/api/orderli`, orderItem)
+      .then((response) => {
+        axios.get(`/api/orderli`).then((res) => {
+          props.setState((prev) => {
+            return {
+              ...prev,
+              order_li: res.data,
+            };
+          });
+          setRedirect(true);
+        });
       })
-    }).catch((error) => console.log(error))
-  }
-
+      .catch((error) => console.log(error));
+  };
 
   return (
     <Fragment>
