@@ -75,30 +75,64 @@ export default function Product() {
     event.preventDefault()
     setHeight(parseInt(event.target.value, 10))
   }
-  console.log(state.options)
   let [selectedItem] = state.prices.filter((item) => item.width === findLow(width,widthArray) && item.height === findLow(height,heightArray))
   let totalOptions = () => {
     let optionPrice = 0;
+    let cordlessCurrent = null
+    let mbc = null
+    let motorCurrent = null
+    let remoteCurrent = null
+    let chargerCurrent = null
+    let retractableCurrent = null
     if (optionItem.cordless === true) {
       optionPrice += state.options[0].price
-    } else {
-    }
+      cordlessCurrent = true
+    } 
+    if (!optionItem.cordless && cordlessCurrent) {
+      optionPrice -= state.options[0].price
+      cordlessCurrent = false
+    } 
     if (optionItem["metal-beaded-chain"] === true) {
       optionPrice += state.options[1].price
-    } 
+      mbc = true
+    }
+    if (!optionItem["metal-beaded-chain"] && mbc) {
+      optionPrice -= state.options[1].price
+      mbc = false
+    }  
     if (optionItem.motor === true) {
       optionPrice += state.options[2].price
+      motorCurrent = true
+    }
+    if (!optionItem.motor && motorCurrent) {
+      optionPrice -= state.options[1].price
+      motorCurrent = false
     }
     if (optionItem.remote === true) {
       optionPrice += state.options[3].price
+      remoteCurrent = true
+    }
+    if (!optionItem.remote && remoteCurrent) {
+      optionPrice -= state.options[1].price
+      remoteCurrent = false
     }
     if (optionItem.charger === true) {
       optionPrice += state.options[4].price
+      chargerCurrent = true
+    }
+    if (!optionItem.charger && chargerCurrent) {
+      optionPrice -= state.options[1].price
+      chargerCurrent = false
     }
     if (optionItem["retractable-cord"] === true) {
       optionPrice += state.options[0].price
+      retractableCurrent = true
     }
-    console.log(optionPrice)
+    if (!optionItem["retractable-cord"] && retractableCurrent) {
+      optionPrice -= state.options[1].price
+      retractableCurrent = false
+    }
+
     return optionPrice;
   }
   if (!selectedItem) {
