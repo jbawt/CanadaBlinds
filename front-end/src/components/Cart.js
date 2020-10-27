@@ -16,6 +16,13 @@ export default function Cart(props) {
       <CartItem
         product={props.products[cartItem.product_id]}
         price={cartItem.price}
+        width= {cartItem.width}
+        height= {cartItem.height}
+        motor= {cartItem.motor_option}
+        cordless={cartItem["cordless_option"]}
+        remote={cartItem.remote_option}
+        metalBeadedChain={cartItem.metalbeadedchain_option}
+        retractableCord={cartItem.retractable_cord_option}
       />
     )
   })

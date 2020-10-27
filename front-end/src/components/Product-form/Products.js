@@ -157,7 +157,6 @@ export default function Product(props) {
     height: height
   }
 
-  console.log(orderItem)
 
   const handleSubmit = () => {
     return axios.post(`/api/orderli`, orderItem).then((response) => {
