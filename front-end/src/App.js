@@ -40,6 +40,17 @@ export default function App() {
     });
   }, []);
 
+  function toObject(array) {
+    var productsObject = {};
+    for (var i = 0; i < array.length; i++) {
+      productsObject[i+1] = array[i];
+    }  
+    return productsObject;
+  }
+
+  let productObj = toObject(state.products);
+  console.log(productObj)
+
   return (
     <Router>
       <div className="nav-div">
@@ -95,7 +106,7 @@ export default function App() {
           <Guide />
         </Route>
         <Route path="/orderli">
-          <Cart cart={state["order_li"]} products={state.products} />
+          <Cart cart={state["order_li"]} products={productObj} />
         </Route>
         <Route path="/">
           <Home products={state.products} />
