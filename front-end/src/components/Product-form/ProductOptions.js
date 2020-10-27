@@ -9,6 +9,11 @@ export default function Product({optionName, setOptions, option}) {
         ...prev,
         [optionName]: true,
       }));
+    } else {
+      setOptions((prev) => ({
+        ...prev,
+        [optionName]: false,
+      }));
     }
   }
 
