@@ -8,6 +8,7 @@ import Product from "./components/Product-form/Products";
 import Cart from "./components/Cart";
 import Guide from "./components/How-to";
 import Products from "./components/Products";
+import Success from "./components/Success";
 import "./App.css";
 
 export default function App() {
@@ -115,7 +116,10 @@ export default function App() {
           <Guide />
         </Route>
         <Route path="/orderli">
-          <Cart cart={state["order_li"]} products={productObj} setState={setState} />
+          <Cart users={state.users} cart={state["order_li"]} products={productObj} setState={setState} />
+        </Route>
+        <Route path="/ordersuccess">
+          <Success/>
         </Route>
         <Route path="/">
           <Home products={state.products} />

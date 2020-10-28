@@ -1,9 +1,40 @@
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
-
 import "./Cart.css";
+import axios from "axios";
 
 export default function Cart(props) {
+//   const pay = () => {
+//     return axios.post("/order", props.users.id).then((res) => {
+//       axios.get("/order").then((response) => {
+//         props.setState((prev) => ({
+//           ...prev,
+//           order: res.data
+//         }))
+//       })
+//     })
+//   }
+  const cartLength = props.cart.length;
+
+  const deleteCart = () => {
+    for(let item of props.cart) {
+        axios
+          .delete(`/api/orderli`, { data: { id: item.id } })
+          .then((response) => {
+            axios.get(`/api/orderli`).then((res) => {
+              props.setState((prev) => {
+                return {
+                  ...prev,
+                  order_li: res.data,
+                }
+              })
+            })
+          })
+          .catch((error) => console.log(error));
+    }
+  }
+
   const price = () => {
     let total = 0;
     for (let price of props.cart) {
@@ -28,7 +59,6 @@ export default function Cart(props) {
         charger={cartItem.charger}
         id={cartItem.id}
         setState={props.setState}
-        cart={props.cart}
       />
     );
   });
@@ -49,9 +79,13 @@ export default function Cart(props) {
         <tbody>{cartItems}</tbody>
       </table>
       <div className="place-order-container">
-        <div className="button">
-          <a href="#">Place Order</a>
-        </div>
+        {cartLength ?  
+        <Link to="/ordersuccess">
+          <div className="button" onClick={deleteCart} >
+            <p>Place Order</p>
+          </div>
+        </Link>
+        : <h2>Cart Empty</h2>}
         <h4>Total: ${price()}</h4>
       </div>
     </Fragment>
