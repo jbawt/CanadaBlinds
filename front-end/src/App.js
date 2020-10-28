@@ -52,10 +52,6 @@ export default function App() {
 
   let productObj = toObject(state.products);
 
-
-
-  
-
   return (
     <Router>
       <div className="nav-div">

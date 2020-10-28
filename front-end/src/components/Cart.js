@@ -62,6 +62,7 @@ export default function Cart(props) {
       />
     );
   });
+
   return (
     <Fragment>
       <h1 className="cart-title">Cart</h1>

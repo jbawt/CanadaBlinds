@@ -13,5 +13,6 @@ CREATE TABLE order_li (
   inside_mount BOOLEAN NOT NULL DEFAULT FALSE,
   charger BOOLEAN NOT NULL DEFAULT FALSE,
   width INTEGER,
-  height INTEGER
+  height INTEGER,
+  is_paid BOOLEAN NOT NULL DEFAULT FALSE
 );
