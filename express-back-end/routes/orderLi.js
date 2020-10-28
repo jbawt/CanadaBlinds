@@ -46,6 +46,18 @@ module.exports = (db) => {
       })
       .catch((err) => console.log(err));
   });
+  router.delete("/", (req,res) => {
+    console.log(req.body)
+    let id = req.body.id;
+    return db.query(`DELETE FROM order_li WHERE id = $1;`, [id])
+    .then((response) => {
+      response.statusCode = 200;
+      // response.json({   status: "ok"  });
+      console.log(response)
+      res.send(response)
+    })
+    .catch((err) => console.log(err));
+  })
 
   return router;
 };

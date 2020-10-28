@@ -26,6 +26,9 @@ export default function Cart(props) {
         metalBeadedChain={cartItem.metalbeadedchain_option}
         retractableCord={cartItem.retractable_cord_option}
         charger={cartItem.charger}
+        id={cartItem.id}
+        setState={props.setState}
+        cart={props.cart}
       />
     );
   });

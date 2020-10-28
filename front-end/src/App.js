@@ -51,6 +51,10 @@ export default function App() {
 
   let productObj = toObject(state.products);
 
+
+
+  
+
   return (
     <Router>
       <div className="nav-div">
@@ -111,7 +115,7 @@ export default function App() {
           <Guide />
         </Route>
         <Route path="/orderli">
-          <Cart cart={state["order_li"]} products={productObj} />
+          <Cart cart={state["order_li"]} products={productObj} setState={setState} />
         </Route>
         <Route path="/">
           <Home products={state.products} />

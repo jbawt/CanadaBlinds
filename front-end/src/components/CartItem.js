@@ -1,9 +1,29 @@
 import React, { Fragment } from "react";
+import axios from "axios"
+
 
 export default function Cart(props) {
-  console.log(props);
+
+
+  const deleteFn = () => {
+    return axios
+      .delete(`/api/orderli`, { data: { id: props.id } })
+      .then((response) => {
+        axios.get(`/api/orderli`).then((res) => {
+          props.setState((prev) => {
+            return {
+              ...prev,
+              order_li: res.data,
+            }
+          })
+        })
+      })
+      .catch((error) => console.log(error));
+  }
+
   return (
     <Fragment>
+
       <tr>
         <td>{props.product.name}</td>
         <td>{props.width}"</td>
@@ -17,8 +37,8 @@ export default function Cart(props) {
         </td>
         <td>${props.price}</td>
         <td>
-          <div className="button">
-            <a href="#">Remove</a>
+          <div className="button" onClick={() => deleteFn()} >
+            <p>Remove</p>
           </div>
         </td>
       </tr>
