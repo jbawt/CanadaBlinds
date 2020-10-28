@@ -15,7 +15,6 @@ header {
   margin: auto;
   display: flex;
   justify-content: center;
-  /* border: 3px solid black; */
   border-radius: 10px;
   background-color: lightslategray;
 }
@@ -28,10 +27,8 @@ header {
   cursor: pointer;
   width: 30vw;
   height: 40vh;
-  /* border: 3px solid black; */
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  /* border-bottom: 3px solid black; */
 }
 
 .product:hover {

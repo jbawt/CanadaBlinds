@@ -1,5 +1,7 @@
-import React from "react";
+import React, { Fragment } from "react";
 import CartItem from "./CartItem";
+
+import "./Cart.css";
 
 export default function Cart(props) {
   const price = () => {
@@ -28,18 +30,27 @@ export default function Cart(props) {
     );
   });
   return (
-    <div>
-      <table>
-        <tr>
-          <th>Product Name</th>
-          <th>Width</th>
-          <th>Height</th>
-          <th>Options</th>
-          <th>Price</th>
-        </tr>
-        {cartItems}
-        <tr>Total: ${price()}</tr>
+    <Fragment>
+      <h1 className="cart-title">Cart</h1>
+      <table className="content-table">
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Width</th>
+            <th>Height</th>
+            <th>Options</th>
+            <th>Price</th>
+            <th>Remove Item</th>
+          </tr>
+        </thead>
+        <tbody>{cartItems}</tbody>
       </table>
-    </div>
+      <div className="place-order-container">
+        <div className="button">
+          <a href="#">Place Order</a>
+        </div>
+        <h4>Total: ${price()}</h4>
+      </div>
+    </Fragment>
   );
 }

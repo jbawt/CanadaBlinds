@@ -6,8 +6,8 @@ export default function Cart(props) {
     <Fragment>
       <tr>
         <td>{props.product.name}</td>
-        <td>{props.width}</td>
-        <td>{props.height}</td>
+        <td>{props.width}"</td>
+        <td>{props.height}"</td>
         <td>
           {props.motor && <p>Motor</p>} {props.cordless && <p>Cordless</p>}{" "}
           {props.remote && <p>Remote</p>}{" "}
@@ -16,6 +16,11 @@ export default function Cart(props) {
           {props.charger && <p>Charger</p>}
         </td>
         <td>${props.price}</td>
+        <td>
+          <div className="button">
+            <a href="#">Remove</a>
+          </div>
+        </td>
       </tr>
     </Fragment>
   );

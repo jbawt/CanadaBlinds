@@ -7,6 +7,7 @@ import About from "./components/About";
 import Product from "./components/Product-form/Products";
 import Cart from "./components/Cart";
 import Guide from "./components/How-to";
+import Products from "./components/Products";
 import "./App.css";
 
 export default function App() {
@@ -35,7 +36,7 @@ export default function App() {
         options: all[2].data,
         prices: all[3].data,
         users: all[4].data,
-        order_li: all[5].data
+        order_li: all[5].data,
       }));
     });
   }, []);
@@ -43,8 +44,8 @@ export default function App() {
   function toObject(array) {
     var productsObject = {};
     for (var i = 0; i < array.length; i++) {
-      productsObject[i+1] = array[i];
-    }  
+      productsObject[i + 1] = array[i];
+    }
     return productsObject;
   }
 
@@ -53,15 +54,17 @@ export default function App() {
   return (
     <Router>
       <div className="nav-div">
-        <h1>
-          <strong>Canada Blinds</strong>
-        </h1>
+        <Link to="/">
+          <h1>
+            <strong>Canada Blinds</strong>
+          </h1>
+        </Link>
         <nav className="nav-bar">
           <ul className="nav-info">
             <Link to="/">
               <li>Home</li>
             </Link>
-            <Link to="/product">
+            <Link to="/products">
               <li>Products</li>
             </Link>
             <Link to="/guides">
@@ -79,11 +82,11 @@ export default function App() {
               </li>
             </Link>
             <Link to="/orderli">
-            <li>
-              Cart{" "}
-              <img src="https://img.icons8.com/emoji/10/000000/shopping-cart-emoji.png" />
-              {state["order_li"].length}
-            </li>
+              <li>
+                {/* Cart{" "} */}
+                <img src="https://img.icons8.com/material-two-tone/20/000000/shopping-cart-loaded.png" />
+                {state["order_li"].length}
+              </li>
             </Link>
           </ul>
         </nav>
@@ -100,6 +103,9 @@ export default function App() {
         </Route>
         <Route path="/products/:id">
           <Product setState={setState} />
+        </Route>
+        <Route path="/products">
+          <Products products={state.products} />
         </Route>
         <Route path="/guides">
           <Guide />

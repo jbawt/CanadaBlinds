@@ -33,7 +33,8 @@ header p {
   left: 5vw;
   border: 2px solid black;
   border-radius: 30px;
-  background-color: bisque;
+  background-color: #e7e7e7;
+  box-shadow: 0px 5px 10px 0px lightslategray;
 }
 
 .contact-info {
@@ -45,5 +46,7 @@ header p {
   left: 10vw;
   border: 2px solid black;
   border-radius: 30px;
-  background-color: bisque;
+  background-color: #e7e7e7;
+  margin-bottom: 2em;
+  box-shadow: 0px 5px 10px 0px lightslategray;
 }

@@ -4,7 +4,7 @@
   padding: 1em;
   display: flex;
   flex-direction: column;
-  background-color: burlywood;
+  background-color: lightslategray;
   border: 2px solid black;
   border-radius: 10px;
 }

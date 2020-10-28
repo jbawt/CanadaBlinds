@@ -26,9 +26,10 @@
   width: 50vw;
   margin-left: 2.5vw;
   padding-top: 0.8em;
-  background-color: burlywood;
+  background-color: #00604c87;
   border-radius: 5px;
   border-bottom: 4px solid black;
+  box-shadow: 0px 5px 10px 0px lightslategray;
 }
 
 .measure-video {
@@ -45,6 +46,7 @@
   background-color: lightgray;
   padding: 1.5em;
   border-radius: 5px;
+  box-shadow: 0px 10px 15px 0px lightslategray;
 }
 
 .install-video-container {
@@ -74,7 +76,8 @@
   padding-top: 0.8em;
   border-bottom: 4px solid black;
   border-radius: 5px;
-  background-color: burlywood;
+  background-color: #00604c87;
+  box-shadow: 0px 5px 10px 0px lightslategray;
 }
 
 .install-video-container article {
@@ -85,6 +88,7 @@
   background-color: lightgray;
   padding: 1.5em;
   border-radius: 5px;
+  box-shadow: 0px 10px 15px 0px lightslategray;
 }
 
 .extra-resources {

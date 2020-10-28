@@ -8,7 +8,7 @@
   padding: 1.2em;
   width: 100%;
   height: 10vh;
-  background-color: blanchedalmond;
+  background-color: #00604c87;
   border-bottom: 2px solid black;
 }
 
@@ -30,7 +30,7 @@
 
 .nav-bar .nav-info a {
   text-decoration: none;
-  color: lightslategray;
+  color: white;
 }
 
 .nav-bar .nav-info li {
@@ -47,7 +47,7 @@
 }
 
 .nav-bar .nav-info li:hover {
-  background-color: darkgrey;
+  background-color: lightslategray;
   color: white;
 }
 
@@ -60,7 +60,7 @@
 
 .nav-bar .user-info a {
   text-decoration: none;
-  color: lightslategray;
+  color: white;
 }
 
 .nav-bar .user-info li {
@@ -73,6 +73,6 @@
 }
 
 .nav-div h1 {
-  color: burlywood;
+  color: black;
   text-decoration: underline;
 }
