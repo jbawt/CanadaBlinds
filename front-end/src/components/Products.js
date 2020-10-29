@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import ProductList from "./ProductList";
 import "./Home.css";
 
@@ -20,5 +20,10 @@ export default function Products({ products }) {
       />
     );
   });
-  return <section className="container">{PL}</section>;
+  return (
+    <Fragment>
+      <h1> Products </h1>
+      <section className="container">{PL}</section>
+    </Fragment>
+  )
 }

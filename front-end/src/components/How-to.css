@@ -26,10 +26,11 @@
   width: 50vw;
   margin-left: 2.5vw;
   padding-top: 0.8em;
-  background-color: #00604c87;
+  background-color: #3d5d75;
   border-radius: 5px;
   border-bottom: 4px solid black;
   box-shadow: 0px 5px 10px 0px lightslategray;
+  color: white;
 }
 
 .measure-video {
@@ -76,8 +77,9 @@
   padding-top: 0.8em;
   border-bottom: 4px solid black;
   border-radius: 5px;
-  background-color: #00604c87;
+  background-color: #3d5d75;
   box-shadow: 0px 5px 10px 0px lightslategray;
+  color: white;
 }
 
 .install-video-container article {

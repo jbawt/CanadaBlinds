@@ -13,9 +13,11 @@
   height: 40vh;
   text-align: center;
   padding: 4.5em;
-  text-decoration: underline;
-  background-image: url("https://www.blindstogo.com/images/products/faux-wood-blinds/faux20_110519_nook_hero.jpg");
+  background-image: url("https://cdn2.hunterdouglas.com/static/carousel/faux-wood-blinds-everwood-trugrain-carousel-01_0.jpg");
   border-bottom: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .homepage-pitch {
@@ -24,4 +26,13 @@
   width: 100%;
   height: 30vh;
   padding: 5em 10em;
+}
+
+.home-header h1 {
+  background-color: rgba(119, 136, 153, 0.5);
+  width: 31vw;
+  border: 2px solid black;
+  border-radius: 10px;
+  color: black;
+  font-weight: 1000;
 }

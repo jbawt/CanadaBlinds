@@ -7,7 +7,7 @@ export default function Home({ products }) {
     return null;
   }
 
-  const PL = products.map((product) => {
+  const PL = products.slice(0, 2).map((product) => {
     return (
       <ProductList
         key={product.id}
@@ -20,10 +20,11 @@ export default function Home({ products }) {
       />
     );
   });
+    
   return (
     <Fragment>
       <header className="home-header">
-        <h1>Canada Blinds</h1>
+        <h1><em>CanadaCustomBlinds</em></h1>
       </header>
       <section className="container">{PL}</section>
       <section className="homepage-pitch">
