@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import CartItem from "./CartItem";
 import "./Cart.css";
 import axios from "axios";
