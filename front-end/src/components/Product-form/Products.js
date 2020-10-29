@@ -189,7 +189,7 @@ export default function Product(props) {
               height={heightArray}
             />
             <section className="option-container">
-              <h1>Your Customizations</h1>
+              <h2>Customizations</h2>
               {optionlist}
             </section>
           </div>

@@ -8,8 +8,8 @@
   padding: 1.2em;
   width: 100%;
   height: 10vh;
-  background-color: #00604c87;
-  border-bottom: 2px solid black;
+  background-color: #3d5d75;
+  border-bottom: 4px solid black;
 }
 
 .nav-bar {
@@ -17,14 +17,13 @@
   height: 7vh;
   position: relative;
   left: 15%;
-  bottom: 30%;
+  bottom: 1.5em;
 }
 
 .nav-bar .nav-info {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  margin-left: 2em;
   list-style: none;
 }
 
@@ -74,5 +73,9 @@
 
 .nav-div h1 {
   color: black;
-  text-decoration: underline;
+  text-decoration: none;
+}
+
+.nav-div a {
+  text-decoration: none;
 }

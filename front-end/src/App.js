@@ -56,9 +56,7 @@ export default function App() {
     <Router>
       <div className="nav-div">
         <Link to="/">
-          <h1>
-            <strong>Canada Blinds</strong>
-          </h1>
+          <h1>Blinds</h1>
         </Link>
         <nav className="nav-bar">
           <ul className="nav-info">
@@ -112,10 +110,15 @@ export default function App() {
           <Guide />
         </Route>
         <Route path="/orderli">
-          <Cart users={state.users} cart={state["order_li"]} products={productObj} setState={setState} />
+          <Cart
+            users={state.users}
+            cart={state["order_li"]}
+            products={productObj}
+            setState={setState}
+          />
         </Route>
         <Route path="/ordersuccess">
-          <Success/>
+          <Success />
         </Route>
         <Route path="/">
           <Home products={state.products} />

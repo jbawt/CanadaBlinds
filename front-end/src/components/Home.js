@@ -23,7 +23,7 @@ export default function Home({ products }) {
   return (
     <Fragment>
       <header className="home-header">
-        <h1>Pick and Customize Your New Blinds!</h1>
+        <h1>Canada Blinds</h1>
       </header>
       <section className="container">{PL}</section>
       <section className="homepage-pitch">
