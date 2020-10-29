@@ -1,10 +1,14 @@
 import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import CartItem from "./CartItem";
 import "./Cart.css";
 import axios from "axios";
+import StripeCheckout from 'react-stripe-checkout';
+
 
 export default function Cart(props) {
+  let history = useHistory();
+
 //   const pay = () => {
 //     return axios.post("/order", props.users.id).then((res) => {
 //       axios.get("/order").then((response) => {
@@ -33,6 +37,7 @@ export default function Cart(props) {
           })
           .catch((error) => console.log(error));
     }
+    history.push("/ordersuccess");
   }
 
   const price = () => {
@@ -79,13 +84,13 @@ export default function Cart(props) {
         </thead>
         <tbody>{cartItems}</tbody>
       </table>
+
       <div className="place-order-container">
         {cartLength ?  
-        <Link to="/ordersuccess">
-          <div className="button" onClick={deleteCart} >
-            <p>Place Order</p>
-          </div>
-        </Link>
+      <StripeCheckout
+        token={deleteCart}
+        stripeKey={process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}
+      />
         : <h2>Cart Empty</h2>}
         <h4>Total: ${price()}</h4>
       </div>
