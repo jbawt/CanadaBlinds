@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import ProductList from "./ProductList";
-import "./Home.css";
+import "./Products.css";
 
 export default function Products({ products }) {
   if (!products.length) {
@@ -22,8 +22,8 @@ export default function Products({ products }) {
   });
   return (
     <Fragment>
-      <h1> Products </h1>
+      <h1 className="product-list-title">Products</h1>
       <section className="container">{PL}</section>
     </Fragment>
-  )
+  );
 }

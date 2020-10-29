@@ -26,4 +26,7 @@
 
 .product-container p {
   flex-grow: 0.2;
+  text-align: center;
+  width: 30vw;
+  font-size: large;
 }

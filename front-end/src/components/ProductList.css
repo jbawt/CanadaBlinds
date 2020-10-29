@@ -12,7 +12,7 @@ header {
 .product {
   width: 30vw;
   border-radius: 5px;
-  margin: auto;
+  margin: 2.5em;
   display: flex;
   justify-content: center;
   border-radius: 10px;

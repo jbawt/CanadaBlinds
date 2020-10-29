@@ -56,7 +56,7 @@ export default function App() {
     <Router>
       <div className="nav-div">
         <Link to="/">
-          <h1>Blinds</h1>
+          <h1>CCB</h1>
         </Link>
         <nav className="nav-bar">
           <ul className="nav-info">
