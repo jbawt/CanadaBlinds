@@ -59,7 +59,7 @@
   justify-content: flex-end;
   list-style: none;
   position: relative;
-  bottom: 1em;
+  bottom: 2em;
 }
 
 .nav-bar .user-info a {

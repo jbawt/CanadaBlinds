@@ -15,7 +15,7 @@
 }
 
 .content-table thead tr {
-  background-color: #009879;
+  background-color: #3d5d75;
   color: #ffffff;
   text-align: left;
   font-weight: bold;
@@ -35,22 +35,23 @@
 }
 
 .content-table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
+  border-bottom: 2px solid #3d5d75;
 }
 
 .content-table tbody tr.active-row {
   font-weight: bold;
-  color: #009879;
+  color: #3d5d75;
 }
 
 .button {
-  border: 2px solid #009879;
+  border: 2px solid #3d5d75;
   width: 8vw;
   height: 4vh;
   display: flex;
   justify-content: center;
   padding: 0.25em;
   border-radius: 40px;
+  cursor: pointer;
 }
 
 .button a {
@@ -59,12 +60,12 @@
 }
 
 .button:hover {
-  background-color: #009879;
+  background-color: #3d5d75;
   color: white;
 }
 
 .order-button {
-  border: 2px solid #009879;
+  border: 2px solid #3d5d75;
   width: 8vw;
   height: 4vh;
   display: flex;

@@ -20,12 +20,21 @@ export default function Home({ products }) {
       />
     );
   });
-    
+
   return (
     <Fragment>
       <header className="home-header">
-        <h1><em>CanadaCustomBlinds</em></h1>
+        <h1>
+          <em>CanadaCustomBlinds</em>
+        </h1>
       </header>
+      <section className="welcome-pitch">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+        </p>
+      </section>
+      <h1 className="best-seller-title">Best Sellers</h1>
       <section className="container">{PL}</section>
       <section className="homepage-pitch">
         <p>

@@ -7,7 +7,6 @@
 }
 
 .product-list-title {
-  /* border: 2px solid red; */
   position: relative;
   top: 1em;
   width: 70vw;
@@ -15,5 +14,5 @@
   padding-left: 1em;
   font-size: 3em;
   text-align: center;
-  text-decoration: underline;
+  border-bottom: 4px solid black;
 }
