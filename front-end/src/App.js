@@ -77,13 +77,19 @@ export default function App() {
             <Link to="/users">
               <li>
                 Account{" "}
-                <img src="https://img.icons8.com/small/10/000000/menu.png" />
+                <img
+                  src="https://img.icons8.com/small/10/000000/menu.png"
+                  alt="account-icon"
+                />
               </li>
             </Link>
             <Link to="/orderli">
               <li>
                 {/* Cart{" "} */}
-                <img src="https://img.icons8.com/material-two-tone/20/000000/shopping-cart-loaded.png" />
+                <img
+                  src="https://img.icons8.com/material-two-tone/20/000000/shopping-cart-loaded.png"
+                  alt="cart-icon"
+                />
                 {state["order_li"].length}
               </li>
             </Link>

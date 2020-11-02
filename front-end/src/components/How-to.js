@@ -8,11 +8,12 @@ export default function Guide() {
       <h2 className="measure-subtitle">Measuring For Your Blinds</h2>
       <div className="measure-video-container">
         <iframe
+          title="measure-video"
           className="measure-video"
           src="https://www.youtube.com/embed/ZyqZZF7OELs"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
         <article>
           <p>
@@ -30,11 +31,12 @@ export default function Guide() {
       <h2 className="install-subtitle">How to install your blinds</h2>
       <div className="install-video-container">
         <iframe
+          title="install-video"
           className="install-video"
           src="https://www.youtube.com/embed/HtVucVg0QEE"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
         <article>
           <p>
