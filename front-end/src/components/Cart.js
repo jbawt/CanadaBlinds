@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import CartItem from "./CartItem";
 import "./Cart.css";
 import axios from "axios";
@@ -71,6 +71,9 @@ export default function Cart(props) {
   return (
     <Fragment>
       <h1 className="cart-title">Cart</h1>
+      <Link to="/products">
+        <div className="button-return-shopping cart-shop">Continue Shopping</div>
+      </Link>
       <table className="content-table">
         <thead>
           <tr>
@@ -92,7 +95,7 @@ export default function Cart(props) {
         stripeKey={process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}
       />
         : <h2>Cart Empty</h2>}
-        <h4>Total: ${price()}</h4>
+        <h4>Total: ${price().toFixed(2)}</h4>
       </div>
     </Fragment>
   );

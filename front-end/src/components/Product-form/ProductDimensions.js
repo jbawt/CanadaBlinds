@@ -20,16 +20,16 @@ const ProductDimensions = (props) => {
   const heightArray = getDimensions(heightStart, heightEnd);
 
   const MakeItem = function (X) {
-    return <option key={X} value={X}>{X}</option>;
+    return <option key={X} value={X}>{X}"</option>;
   };
 
   return (
     <div className="dimension-container">
       <h2>Dimensions</h2>
-      <label htmlFor="width">Select Width:</label>
+      <label htmlFor="width">Select Width (inches):</label>
       <select onChange={props.handleWidth} id="width">{widthArray.map(MakeItem)}</select>
 
-      <label htmlFor="height">Select Height:</label>
+      <label htmlFor="height">Select Height (inches):</label>
       <select onChange={props.handleHeight} id="height">{heightArray.map(MakeItem)}</select>
     </div>
   );

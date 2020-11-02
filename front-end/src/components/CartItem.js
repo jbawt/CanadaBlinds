@@ -35,7 +35,7 @@ export default function Cart(props) {
           {props.retractableCord && <p>Retractable Cord</p>}{" "}
           {props.charger && <p>Charger</p>}
         </td>
-        <td>${props.price}</td>
+        <td>${props.price.toFixed(2)}</td>
         <td>
           <div className="button" onClick={() => deleteFn()} >
             <p>Remove</p>

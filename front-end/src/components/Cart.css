@@ -95,3 +95,11 @@
   margin-top: 0.5em;
   width: 30vw;
 }
+
+.cart-shop {
+  float: right;
+  margin-right: 5em;
+  margin-bottom: 2em;
+  color: black;
+}
+
