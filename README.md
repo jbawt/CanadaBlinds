@@ -1,28 +1,19 @@
-## User stories
+# Canada Custom Blinds
 
-- User can visit home-page/about/how-to/products from nav
-- User can select product and customize with provided options
-- User can add to cart
-- User can change quantity in cart
-- User can see cart and "pay"
-- User can see order go through
+This is an e-commerce website meant to help home owners with ordering and installing customized blinds for their homes.
 
-## Stretch
+# Preview
 
-- User can see successful payment and order info
-- User can hover over product and see other demo images
+!["Main Page"](https://github.com/jbawt/CanadaBlinds/blob/main/Docs/home-page.png)
+!["Guide"](https://github.com/jbawt/CanadaBlinds/blob/main/Docs/guide-page.png)
+!["Customize page"](https://github.com/jbawt/CanadaBlinds/blob/main/Docs/customization-page.png)
+!["Cart"](https://github.com/jbawt/CanadaBlinds/blob/main/Docs/cart.png)
+!["Stripe pay"](https://github.com/jbawt/CanadaBlinds/blob/main/Docs/stripe-pay.png)
+!["Order Details"](https://github.com/jbawt/CanadaBlinds/blob/main/Docs/order-details.png)
 
-## Routes
+## Stack
 
-### GET
-
-- GET /api/index
-- GET /api/products
-- GET /api/products/:id/prices
-- GET /api/cart
-- GET /api/users/:id
-
-### POST
-
-- POST /api/cart
-- POST /api/users
+- React.js
+- Express.js
+- PostgreSQL
+- Node.js
