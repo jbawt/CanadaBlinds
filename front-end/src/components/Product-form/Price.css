@@ -27,12 +27,12 @@
 }
 
 .price-info h2 {
-  font-size: xx-large;
+  font-size: x-large;
 }
 
 .price-info h2,
 .price-info h4 {
-  margin-top: 0.5em;
+  margin-top: 0.8em;
 }
 
 .price-total-container button {
