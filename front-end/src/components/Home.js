@@ -30,23 +30,30 @@ export default function Home({ products }) {
       </header>
       <section className="welcome-pitch">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          <em> "Reliable Shades Are The Foundation Of Our Business"  </em><br/>
         </p>
       </section>
       <h1 className="best-seller-title">Best Sellers</h1>
       <section className="container">{PL}</section>
       <section className="homepage-pitch">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-      </section>
+          <section>
+            <h4>Calgary Office: </h4> <br/>
+            Name: (Client Name) <br/>
+            Title: (Client Title) <br/>
+            Phone: (Client Phone) <br/>
+            Email: (Client Email) <br/>
+            Address: (Client Office) <br/>
+            </section>
+            <br/>
+            <section>
+            <h4>Vancouver Office: </h4> <br/>
+            Name: (Client Name) <br/>
+            Title: (Client Title) <br/>
+            Phone: (Client Phone) <br/>
+            Email: (Client Email) <br/>
+            Address: (Client Office) <br/>
+            </section>          
+        </section>
     </Fragment>
   );
 }

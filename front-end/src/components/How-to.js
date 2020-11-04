@@ -17,6 +17,8 @@ export default function Guide() {
         ></iframe>
         <article>
           <p>
+            Watch this video to learn how to accurately meassure your blinds 
+            to the selected window.
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -40,6 +42,8 @@ export default function Guide() {
         ></iframe>
         <article>
           <p>
+            Watch this video to learn how to accurately install your blinds 
+            to the selected window.
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
