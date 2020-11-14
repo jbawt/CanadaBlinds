@@ -24,36 +24,35 @@ export default function Home({ products }) {
   return (
     <Fragment>
       <header className="home-header">
-        <h1>
-          <em>CanadaCustomBlinds</em>
-        </h1>
+        <h1>CanadaCustomBlinds</h1>
       </header>
       <section className="welcome-pitch">
         <p>
-          <em> "Reliable Shades Are The Foundation Of Our Business"  </em><br/>
+          <em> "Reliable Shades Are The Foundation Of Our Business" </em>
+          <br />
         </p>
       </section>
       <h1 className="best-seller-title">Best Sellers</h1>
       <section className="container">{PL}</section>
       <section className="homepage-pitch">
-          <section>
-            <h4>Calgary Office: </h4> <br/>
-            Name: (Client Name) <br/>
-            Title: (Client Title) <br/>
-            Phone: (Client Phone) <br/>
-            Email: (Client Email) <br/>
-            Address: (Client Office) <br/>
-            </section>
-            <br/>
-            <section>
-            <h4>Vancouver Office: </h4> <br/>
-            Name: (Client Name) <br/>
-            Title: (Client Title) <br/>
-            Phone: (Client Phone) <br/>
-            Email: (Client Email) <br/>
-            Address: (Client Office) <br/>
-            </section>          
+        <section>
+          <h4>Calgary Office: </h4> <br />
+          Name: (Client Name) <br />
+          Title: (Client Title) <br />
+          Phone: (Client Phone) <br />
+          Email: (Client Email) <br />
+          Address: (Client Office) <br />
         </section>
+        <br />
+        <section>
+          <h4>Vancouver Office: </h4> <br />
+          Name: (Client Name) <br />
+          Title: (Client Title) <br />
+          Phone: (Client Phone) <br />
+          Email: (Client Email) <br />
+          Address: (Client Office) <br />
+        </section>
+      </section>
     </Fragment>
   );
 }

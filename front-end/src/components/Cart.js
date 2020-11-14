@@ -3,42 +3,41 @@ import { useHistory, Link } from "react-router-dom";
 import CartItem from "./CartItem";
 import "./Cart.css";
 import axios from "axios";
-import StripeCheckout from 'react-stripe-checkout';
-
+import StripeCheckout from "react-stripe-checkout";
 
 export default function Cart(props) {
   let history = useHistory();
 
-//   const pay = () => {
-//     return axios.post("/order", props.users.id).then((res) => {
-//       axios.get("/order").then((response) => {
-//         props.setState((prev) => ({
-//           ...prev,
-//           order: res.data
-//         }))
-//       })
-//     })
-//   }
+  //   const pay = () => {
+  //     return axios.post("/order", props.users.id).then((res) => {
+  //       axios.get("/order").then((response) => {
+  //         props.setState((prev) => ({
+  //           ...prev,
+  //           order: res.data
+  //         }))
+  //       })
+  //     })
+  //   }
   const cartLength = props.cart.length;
 
   const deleteCart = () => {
-    for(let item of props.cart) {
-        axios
-          .delete(`/api/orderli`, { data: { id: item.id } })
-          .then((response) => {
-            axios.get(`/api/orderli`).then((res) => {
-              props.setState((prev) => {
-                return {
-                  ...prev,
-                  order_li: res.data,
-                }
-              })
-            })
-          })
-          .catch((error) => console.log(error));
+    for (let item of props.cart) {
+      axios
+        .delete(`/api/orderli`, { data: { id: item.id } })
+        .then((response) => {
+          axios.get(`/api/orderli`).then((res) => {
+            props.setState((prev) => {
+              return {
+                ...prev,
+                order_li: res.data,
+              };
+            });
+          });
+        })
+        .catch((error) => console.log(error));
     }
     history.push("/ordersuccess");
-  }
+  };
 
   const price = () => {
     let total = 0;
@@ -72,7 +71,7 @@ export default function Cart(props) {
     <Fragment>
       <h1 className="cart-title">Cart</h1>
       <Link to="/products">
-        <div className="button-return-shopping cart-shop">Continue Shopping</div>
+        <div className="cart-shop button">Continue Shopping</div>
       </Link>
       <table className="content-table">
         <thead>
@@ -89,12 +88,14 @@ export default function Cart(props) {
       </table>
 
       <div className="place-order-container">
-        {cartLength ?  
-      <StripeCheckout
-        token={deleteCart}
-        stripeKey={process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}
-      />
-        : <h2>Cart Empty</h2>}
+        {cartLength ? (
+          <StripeCheckout
+            token={deleteCart}
+            stripeKey={process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}
+          />
+        ) : (
+          <h2>Cart Empty</h2>
+        )}
         <h4>Total: ${price().toFixed(2)}</h4>
       </div>
     </Fragment>
