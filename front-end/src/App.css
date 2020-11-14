@@ -39,10 +39,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
+  font-size: 1.3rem;
   width: 6vw;
   height: 5vh;
-  margin-left: 2em;
+  margin-left: 1em;
   position: relative;
   bottom: 20px;
   border-radius: 5px;
@@ -76,6 +76,11 @@
   cursor: pointer;
 }
 
+.nav-bar .user-info .dropdown-menu {
+  position: relative;
+  bottom: 4em;
+}
+
 .nav-div h1 {
   color: black;
   -webkit-text-stroke: 2px black;
@@ -86,9 +91,9 @@
   width: 10vw;
   display: flex;
   justify-content: center;
-  font-size: 50px;
+  font-size: 3.8em;
   position: relative;
-  bottom: 23px;
+  bottom: 0.2em;
 }
 
 .nav-div a {

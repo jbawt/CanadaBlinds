@@ -1,11 +1,13 @@
 .guide-title {
   font-size: 3em;
   height: 40vh;
-  text-align: center;
   padding: 2.5em;
   text-decoration: underline;
   background-image: url("https://www.blindstogo.com/images/products/faux-wood-blinds/faux20_110519_nook_hero.jpg");
   border-bottom: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .measure-video-container {

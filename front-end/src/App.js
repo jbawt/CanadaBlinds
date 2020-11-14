@@ -9,6 +9,8 @@ import Cart from "./components/Cart";
 import Guide from "./components/How-to";
 import Products from "./components/Products";
 import Success from "./components/Success";
+import DropDownMenu from "./components/Drop-Down-Menu";
+import Footer from "./components/Footer";
 import "./App.css";
 
 export default function App() {
@@ -20,6 +22,7 @@ export default function App() {
     users: [],
     order_li: [],
   });
+  const [dropDown, setDropDown] = useState(false);
 
   useEffect(() => {
     Promise.all([
@@ -74,18 +77,8 @@ export default function App() {
             </Link>
           </ul>
           <ul className="user-info">
-            <Link to="/users">
-              <li>
-                Account{" "}
-                <img
-                  src="https://img.icons8.com/small/10/000000/menu.png"
-                  alt="account-icon"
-                />
-              </li>
-            </Link>
             <Link to="/orderli">
               <li>
-                {/* Cart{" "} */}
                 <img
                   src="https://img.icons8.com/material-two-tone/20/000000/shopping-cart-loaded.png"
                   alt="cart-icon"
@@ -93,12 +86,22 @@ export default function App() {
                 {state["order_li"].length}
               </li>
             </Link>
+            <li
+              className="dropdown-menu"
+              onClick={() => setDropDown(!dropDown)}
+            >
+              <img
+                src="https://img.icons8.com/small/35/000000/menu.png"
+                alt="account-icon"
+              />
+            </li>
           </ul>
         </nav>
       </div>
+      {dropDown && (
+        <DropDownMenu setDropDown={setDropDown} dropDown={dropDown} />
+      )}
 
-      {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
       <Switch>
         <Route path="/about">
           <About />
@@ -130,6 +133,7 @@ export default function App() {
           <Home products={state.products} />
         </Route>
       </Switch>
+      <Footer />
     </Router>
   );
 }

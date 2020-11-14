@@ -31,7 +31,6 @@
 }
 
 .home-header h1 {
-  width: 37vw;
   border-radius: 10px;
   color: white;
   font-weight: 1000;
@@ -40,6 +39,7 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-size: 4em;
 }
 
 .welcome-pitch {
